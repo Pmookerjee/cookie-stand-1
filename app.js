@@ -154,3 +154,44 @@ for (i = 0; i<8; i++){
 child = document.createElement('li');
 child.textContent = 'Total : ' + total + ' cookies';
 parent.appendChild(child);
+
+
+//creating Alki object: Alki	3	24    2.6
+
+var alki = {
+  min: 3,
+  max: 24,
+  averageCookiesPerCustomer : 2.6,
+  customerPerHourFnctn: function(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  },
+  cookiesPerHour:[],
+  // cookies per hour generator:
+  generateCookies:function(){
+    for (i=0; i<8; i++){
+      this.cookiesPerHour[i]=Math.round(this.customerPerHourFnctn(this.min, this.max)*this.averageCookiesPerCustomer);
+    }
+  }
+}
+alki.generateCookies();
+// creating li
+total = 0;
+parent = document.getElementById('alki');
+for (i = 0; i<8; i++){
+  child = document.createElement('li');
+  if (i<2){
+    child.textContent = ( (10+i) + ' am:' + ' ' + alki.cookiesPerHour[i] + ' cookies');
+  } else  if (i===2){
+    child.textContent = ( '12 pm:' + ' ' + alki.cookiesPerHour[i] + ' cookies');
+  }else{
+    child.textContent = ( (i-2) + ' pm:' + ' ' + alki.cookiesPerHour[i] + ' cookies');
+  }
+  total += alki.cookiesPerHour[i];
+  parent.appendChild(child);
+}
+// total:
+  child = document.createElement('li');
+  child.textContent = 'Total: ' + total + ' cookies';
+  parent.appendChild(child);
+
+  
