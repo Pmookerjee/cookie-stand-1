@@ -21,11 +21,17 @@ var child;
 var total = 0;
 for (i=0; i<8; i++){
   child = document.createElement('li');
-  child.textContent= ( (10+i) + ' :' + ' ' + pikePlaceMarket.cookiesPerHour[i] + ' cookies');
+  if (i<2){
+    child.textContent= ( (10+i) + ' am:' + ' ' + pikePlaceMarket.cookiesPerHour[i] + ' cookies');
+  } else  if (i===2){
+    child.textContent= ( '12 pm:' + ' ' + pikePlaceMarket.cookiesPerHour[i] + ' cookies');
+  }else{
+    child.textContent= ( (i-2) + ' pm:' + ' ' + pikePlaceMarket.cookiesPerHour[i] + ' cookies');
+  }
   total += pikePlaceMarket.cookiesPerHour[i];
   parent.appendChild(child);
   console.log(total);
 }
 child = document.createElement('li');
-child.textContent = ('Total cookies: ' + total);
+child.textContent = ('Total: ' + total + ' cookies');
 parent.appendChild(child);
