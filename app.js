@@ -118,3 +118,39 @@ for (i = 0; i<8; i++){
 child = document.createElement('li');
 child.textContent = 'Total : ' + total + ' cookies'
 parent.appendChild(child);
+
+// Bellevue Square	20	48	3.3   - create object:
+var bellSquare = {
+  min: 20,
+  max: 48,
+  averageCookiesPerCustomer: 3.3,
+  customerPerHourFnctn: function(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  },
+  cookiesPerHour:[],
+  // cookies per hour generator:
+  generateCookies:function(){
+    for (i=0; i<8; i++){
+      this.cookiesPerHour[i]=Math.round(this.customerPerHourFnctn(this.min, this.max)*this.averageCookiesPerCustomer);
+    }
+  }
+}
+bellSquare.generateCookies();
+// creating li for bellSquare:
+total = 0;
+parent = document.getElementById('bellSquare');
+for (i = 0; i<8; i++){
+  child = document.createElement('li');
+  if (i<2){
+    child.textContent = ( (10+i) + ' am:' + ' ' + bellSquare.cookiesPerHour[i] + ' cookies');
+  } else  if (i===2){
+    child.textContent = ( '12 pm:' + ' ' + bellSquare.cookiesPerHour[i] + ' cookies');
+  }else{
+    child.textContent = ( (i-2) + ' pm:' + ' ' + bellSquare.cookiesPerHour[i] + ' cookies');
+  }
+  total += bellSquare.cookiesPerHour[i];
+  parent.appendChild(child);
+}
+child = document.createElement('li');
+child.textContent = 'Total : ' + total + ' cookies';
+parent.appendChild(child);
