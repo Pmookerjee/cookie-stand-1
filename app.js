@@ -10,7 +10,7 @@ var pikePlaceMarket = {
   cookiesPerHour:[],
   // cookies per hour generator:
   generateCookies:function(){
-    for (i=0; i<8; i++){
+    for (var i=0; i<8; i++){
       this.cookiesPerHour[i]=Math.round(this.customerPerHourFnctn(this.min, this.max)*this.averageCookiesPerCustomer);
     }
   }
@@ -21,7 +21,7 @@ pikePlaceMarket.generateCookies();
 var parent = document.getElementById('Pike-Place');
 var child;
 var total = 0;
-for (i=0; i<8; i++){
+for (var i=0; i<8; i++){
   child = document.createElement('li');
   if (i<2){
     child.textContent= ( (10+i) + ' am:' + ' ' + pikePlaceMarket.cookiesPerHour[i] + ' cookies');
@@ -193,5 +193,3 @@ for (i = 0; i<8; i++){
   child = document.createElement('li');
   child.textContent = 'Total: ' + total + ' cookies';
   parent.appendChild(child);
-
-  
