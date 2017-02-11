@@ -1,1 +1,52 @@
+body {
+  font-style: normal;
+  font-family: sans-serif;
+  font-size: 1em;
+  background-color: beige;
+  background-image: salmon.jpg;
+  margin-left: 5%;
+}
+#stylepage{
+  background-color: white;
+}
+h1{
+  display: flex;
+  justify-content: center;
+  background-color: beige;
+}
 
+#shirt {
+  width:30%;
+  }
+
+#salmon-image{
+   float: right;
+   width:30%;
+   margin-right: 5%;
+}
+
+#shirt {
+  width:30%;
+}
+.one{
+    margin-bottom: 5%;
+}
+
+#highlights{
+  color:red;
+  font-family: Lobster, san-serif;
+}
+#data {
+  font-family: Helvetica, serif;
+  color: blue;
+}
+#text{
+  font-family:Georgia, serif;
+  color: brown;
+}
+#color1{
+  background-color: beige;
+}
+#color2{
+  background-color: yellow;
+}
