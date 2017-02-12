@@ -54,6 +54,19 @@ console.log(stand);
 stand.generateCookies();
 stand.renderAsRow();
 
+trElement = document.createElement('tr');
+nameData = document.createElement('td');
+nameData.textContent = 'Total';
+trElement.appendChild(nameData);
+standsTable.appendChild(trElement);
+var totalByHour;
+for (i = 0; i<8; i++){
+  nameData = document.createElement('td');
+  nameData.textContent = this.cookiesPerHour[i];
+  totalByHour +=this.cookiesPerHour[i];
+  trElement.appendChild(nameData);
+  standsTable.appendChild(trElement);
+}
 //creating an array of all cookie stands:
 // var allStands = [['Pike Place',	17,	88,	5.2], ['SeaTac Airport',	6,	24,	1.2],['Southcenter',	11,	38,	1.9],['Bellevue Square',	20,	48,	3.3
 // ], ['Alki',	3,	24, 2.6]];
