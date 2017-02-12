@@ -32,19 +32,35 @@ function Stand(name, min, max, averageCookies){
     }
   }
 }
-
-
+// creating and rendering a row for the Pike Place:
 var stand = new Stand('Pike Place',	17,	88,	5.2);
 console.log(stand);
 stand.generateCookies();
 stand.renderAsRow();
+
+// creating and rendering a row for the Sea-Tac:
+var stand = new Stand('SeaTac Airport',	6,	24,	1.2);
+console.log(stand);
+stand.generateCookies();
+stand.renderAsRow();
+
+var stand = new Stand('Southcenter',	11,	38,	1.9);
+console.log(stand);
+stand.generateCookies();
+stand.renderAsRow();
+
+var stand = new Stand('Alki',	3,	24, 2.6);
+console.log(stand);
+stand.generateCookies();
+stand.renderAsRow();
+
 //creating an array of all cookie stands:
-var allStands = [['Pike Place',	17,	88,	5.2], ['SeaTac Airport',	6,	24,	1.2],['Southcenter',	11,	38,	1.9],['Bellevue Square',	20,	48,	3.3
-], ['Alki',	3,	24, 2.6]];
-//rendering objects using the above array:
-//
+// var allStands = [['Pike Place',	17,	88,	5.2], ['SeaTac Airport',	6,	24,	1.2],['Southcenter',	11,	38,	1.9],['Bellevue Square',	20,	48,	3.3
+// ], ['Alki',	3,	24, 2.6]];
+// //rendering objects using the above array:
+// var stand;
 // for (i=0; i< 5; i++){
-//   var stand = new Stand(allStands[i]);
+//   stand = new Stand(allStands[i]);
 //   console.log(stand);
 //   stand.generateCookies();
 //   //console.log(stand.name);
