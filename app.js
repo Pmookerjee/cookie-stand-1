@@ -1,40 +1,62 @@
 // Building a constructor function
 function Stand(name, min, max, averageCookies){
+  // var newStand = {};
   this.name= name;
   this.min = min;
   this.max = max;
   this.averageCookies = averageCookies;
-
-  customerPerHourFnctn: function(min, max){
+  this.customerPerHourFnctn= function(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  },
-  cookiesPerHour:[],
+  };
+  this.cookiesPerHour=[];
   // cookies per hour generator:
-  generateCookies:function(){
+  this.generateCookies=function(){
     for (var i=0; i<8; i++){
       this.cookiesPerHour[i]=Math.round(this.customerPerHourFnctn(this.min, this.max)*this.averageCookies);
     }
   }
   //rendering table rows
   this.renderAsRow = function(){
-    var tableRow = document.getElementById('standsTable');
+    var table = document.getElementById('standsTable');
     var trElement = document.createElement('tr');
-    for (i = 0; i<8, i++){
-      var nameData = document.createElement('td');
+    var nameData;
+    nameData = document.createElement('td');
+    nameData.textContent = this.name;
+    trElement.appendChild(nameData);
+    standsTable.appendChild(trElement);
+    for (i = 0; i<8; i++){
+      nameData = document.createElement('td');
       nameData.textContent = this.cookiesPerHour[i];
       trElement.appendChild(nameData);
       standsTable.appendChild(trElement);
     }
   }
 }
-var allStands = [[Pike Place,	17,	88,	5.2], [SeaTac Airport,	6,	24,	1.2],[Southcenter,	11,	38,	1.9]];
 
 
-
-
-
-
-
+var stand = new Stand('Pike Place',	17,	88,	5.2);
+console.log(stand);
+stand.generateCookies();
+stand.renderAsRow();
+//creating an array of all cookie stands:
+var allStands = [['Pike Place',	17,	88,	5.2], ['SeaTac Airport',	6,	24,	1.2],['Southcenter',	11,	38,	1.9],['Bellevue Square',	20,	48,	3.3
+], ['Alki',	3,	24, 2.6]];
+//rendering objects using the above array:
+//
+// for (i=0; i< 5; i++){
+//   var stand = new Stand(allStands[i]);
+//   console.log(stand);
+//   stand.generateCookies();
+//   //console.log(stand.name);
+//   stand.renderAsRow();
+// }
+//
+//
+//
+//
+//
+//
+//
 
 
 
