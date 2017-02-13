@@ -32,6 +32,32 @@ function Stand(name, min, max, averageCookies){
     }
   }
 }
+
+//creating a table header:
+  function renderHeader() {
+  var table = document.getElementById('standsTable');
+  var trElement = document.createElement('thead');
+  var nameData;
+  nameData = document.createElement('td');
+  nameData.textContent = "Store Name";
+  trElement.appendChild(nameData);
+  standsTable.appendChild(trElement);
+  for (i = 0; i<8;i++){
+    nameData = document.createElement('td');
+    if (i<2){
+    nameData.textContent = (10+i) + ' am'
+  } else if(i===2){
+    nameData.textContent = '12 pm'
+  } else {
+    nameData.textContent = (i-2) + ' pm'
+  }
+    trElement.appendChild(nameData);
+    standsTable.appendChild(trElement);
+  }
+}
+//calling the header funcion:
+renderHeader();
+
 // creating and rendering a row for the Pike Place:
 var stand = new Stand('Pike Place',	17,	88,	5.2);
 console.log(stand);
@@ -54,19 +80,26 @@ console.log(stand);
 stand.generateCookies();
 stand.renderAsRow();
 
-trElement = document.createElement('tr');
-nameData = document.createElement('td');
-nameData.textContent = 'Total';
-trElement.appendChild(nameData);
-standsTable.appendChild(trElement);
-var totalByHour;
-for (i = 0; i<8; i++){
+
+// creating a footer function:
+function renderFooter(){
+  trElement = document.createElement('tr');
   nameData = document.createElement('td');
-  nameData.textContent = this.cookiesPerHour[i];
-  totalByHour +=this.cookiesPerHour[i];
+  nameData.textContent = 'Total';
   trElement.appendChild(nameData);
   standsTable.appendChild(trElement);
+  var totalByHour;
+  for (i = 0; i<8; i++){
+    nameData = document.createElement('td');
+    nameData.textContent = this.cookiesPerHour[i];
+    totalByHour +=this.cookiesPerHour[i];
+    trElement.appendChild(nameData);
+    standsTable.appendChild(trElement);
+  }
 }
+// creating a footer
+renderFooter();
+
 //creating an array of all cookie stands:
 // var allStands = [['Pike Place',	17,	88,	5.2], ['SeaTac Airport',	6,	24,	1.2],['Southcenter',	11,	38,	1.9],['Bellevue Square',	20,	48,	3.3
 // ], ['Alki',	3,	24, 2.6]];
