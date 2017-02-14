@@ -59,7 +59,7 @@ function renderHeader(){
 };
 // creating a footer function:
 function renderFooter(){
-  trElement = document.createElement('tr');
+  trElement = document.createElement('tfoot');
   nameData = document.createElement('td');
   nameData.textContent = 'Total';
   trElement.appendChild(nameData);
