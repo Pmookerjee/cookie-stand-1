@@ -13,28 +13,30 @@ function Stand(name, min, max, averageCookies){
   this.generateCookies=function(){
     for (var i=0; i<8; i++){
       this.cookiesPerHour[i]=Math.round(this.customerPerHourFnctn(this.min, this.max)*this.averageCookies);
+      columnsTotal[i]+= this.cookiesPerHour[i];
+      console.log(columnsTotal[i] +" cookies "+ this.cookiesPerHour[i]);
     }
   }
-  //rendering table rows
+
+//rendering table rows function:
   this.renderAsRow = function(){
-    var table = document.getElementById('standsTable');
-    var trElement = document.createElement('tr');
-    var nameData;
+  var table = document.getElementById('standsTable');
+  var trElement = document.createElement('tr');
+  var nameData;
+  nameData = document.createElement('td');
+  nameData.textContent = this.name;
+  trElement.appendChild(nameData);
+  standsTable.appendChild(trElement);
+  for (i = 0; i<8; i++){
     nameData = document.createElement('td');
-    nameData.textContent = this.name;
+    nameData.textContent = this.cookiesPerHour[i];
     trElement.appendChild(nameData);
     standsTable.appendChild(trElement);
-    for (i = 0; i<8; i++){
-      nameData = document.createElement('td');
-      nameData.textContent = this.cookiesPerHour[i];
-      trElement.appendChild(nameData);
-      standsTable.appendChild(trElement);
-    }
   }
 }
-
-//creating a table header:
-  function renderHeader() {
+};
+//creating a table header function:
+function renderHeader(){
   var table = document.getElementById('standsTable');
   var trElement = document.createElement('thead');
   var nameData;
@@ -45,18 +47,40 @@ function Stand(name, min, max, averageCookies){
   for (i = 0; i<8;i++){
     nameData = document.createElement('td');
     if (i<2){
-    nameData.textContent = (10+i) + ' am'
-  } else if(i===2){
-    nameData.textContent = '12 pm'
-  } else {
-    nameData.textContent = (i-2) + ' pm'
-  }
+      nameData.textContent = (10+i) + ' am'
+    } else if(i===2){
+      nameData.textContent = '12 pm'
+    } else {
+      nameData.textContent = (i-2) + ' pm'
+    }
     trElement.appendChild(nameData);
     standsTable.appendChild(trElement);
   }
-}
+};
+// creating a footer function:
+function renderFooter(){
+  trElement = document.createElement('tr');
+  nameData = document.createElement('td');
+  nameData.textContent = 'Total';
+  trElement.appendChild(nameData);
+  standsTable.appendChild(trElement);
+  var totalByHour;
+  for (i = 0; i<8; i++){
+    nameData = document.createElement('td');
+    nameData.textContent = columnsTotal[i];
+    console.log(nameData.textContent);
+    totalByHour +=columnsTotal[i];
+    trElement.appendChild(nameData);
+    standsTable.appendChild(trElement);
+  }
+};
+
+// columns totals array:
+var columnsTotal =[0, 0, 0, 0, 0, 0, 0, 0];
+
 //calling the header funcion:
 renderHeader();
+
 
 // creating and rendering a row for the Pike Place:
 var stand = new Stand('Pike Place',	17,	88,	5.2);
@@ -80,45 +104,8 @@ console.log(stand);
 stand.generateCookies();
 stand.renderAsRow();
 
-
-// creating a footer function:
-function renderFooter(){
-  trElement = document.createElement('tr');
-  nameData = document.createElement('td');
-  nameData.textContent = 'Total';
-  trElement.appendChild(nameData);
-  standsTable.appendChild(trElement);
-  var totalByHour;
-  for (i = 0; i<8; i++){
-    nameData = document.createElement('td');
-    nameData.textContent = this.cookiesPerHour[i];
-    totalByHour +=this.cookiesPerHour[i];
-    trElement.appendChild(nameData);
-    standsTable.appendChild(trElement);
-  }
-}
-// creating a footer
+// calling a footer
 renderFooter();
-
-//creating an array of all cookie stands:
-// var allStands = [['Pike Place',	17,	88,	5.2], ['SeaTac Airport',	6,	24,	1.2],['Southcenter',	11,	38,	1.9],['Bellevue Square',	20,	48,	3.3
-// ], ['Alki',	3,	24, 2.6]];
-// //rendering objects using the above array:
-// var stand;
-// for (i=0; i< 5; i++){
-//   stand = new Stand(allStands[i]);
-//   console.log(stand);
-//   stand.generateCookies();
-//   //console.log(stand.name);
-//   stand.renderAsRow();
-// }
-//
-//
-//
-//
-//
-//
-//
 
 
 
