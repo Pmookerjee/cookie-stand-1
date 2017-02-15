@@ -20,19 +20,30 @@
   <table id = "standsTable">
 
   </table>
+  <form id="form">
+    <fieldset>
+      <legend>Enter all the data for the new store below:</legend>
 
-  <!-- <h2>SeaTac Airport</h2>
-  <ul id = "seaTac"></ul>
+      <!--make a block-level input  -->
+      <div>
+        <label for="name">Store Name:</label>
+        <input type="text" name="name" required placeholder="Name">
+      </div>
 
-  <h2>South Center</h2>
-    <ul id = "southCenter"></ul>
+      <!--everything else in the form will be inline  -->
+      <label for="min">Min number of customers:</label>
+      <input type="number" name="min" required placeholder="number">
 
-  <h2>Bellevue Square</h2>
-  <ul id = "bellSquare"></ul>
+      <label for="max">Max number of customers:</label>
+      <input type="number" name="max" required placeholder="number">
 
-  <h2>Alki Beach</h2>
-  <ul id = "alki"></ul> -->
+      <label for="avCook">Average number of cookies per Customer:</label>
+      <input type="number" name="avCook" required placeholder="number">
 
+      <input type="submit" value="Add the store">
+    </fieldset>
+  </form>
+  <!-- <button>Click to see totals:</button> -->
   <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
