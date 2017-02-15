@@ -5,21 +5,25 @@ function Stand(name, min, max, averageCookies){
   this.min = min;
   this.max = max;
   this.averageCookies = averageCookies;
-  this.customerPerHourFnctn= function(min, max){
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
   this.cookiesPerHour=[];
-  // cookies per hour generator:
-  this.generateCookies=function(){
-    for (var i=0; i<8; i++){
-      this.cookiesPerHour[i]=Math.round(this.customerPerHourFnctn(this.min, this.max)*this.averageCookies);
-      columnsTotal[i]+= this.cookiesPerHour[i];
-      console.log(columnsTotal[i] +" cookies "+ this.cookiesPerHour[i]);
-    }
+};
+
+//random nuber generator:
+Stand.prototype.customerPerHourFnctn= function(min, max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+// cookies per hour generator:
+Stand.prototype.generateCookies=function(){
+  for (var i=0; i<8; i++){
+    this.cookiesPerHour[i]=Math.round(this.customerPerHourFnctn(this.min, this.max)*this.averageCookies);
+    columnsTotal[i]+= this.cookiesPerHour[i];
+    console.log(columnsTotal[i] +" cookies "+ this.cookiesPerHour[i]);
   }
+}
 
 //rendering table rows function:
-  this.renderAsRow = function(){
+Stand.prototype.renderAsRow = function(){
   var table = document.getElementById('standsTable');
   var trElement = document.createElement('tr');
   var nameData;
@@ -34,7 +38,7 @@ function Stand(name, min, max, averageCookies){
     standsTable.appendChild(trElement);
   }
 }
-};
+
 //creating a table header function:
 function renderHeader(){
   var table = document.getElementById('standsTable');
@@ -76,13 +80,10 @@ function renderFooter(){
 };
 
 // columns totals array:
-var columnsTotal =[0, 0, 0, 0, 0, 0, 0, 0];
-
+var columnsTotal = [0, 0, 0, 0, 0, 0, 0, 0];
 //calling the header funcion:
 renderHeader();
 
-
-// creating and rendering a row for the Pike Place:
 var stand = new Stand('Pike Place',	17,	88,	5.2);
 console.log(stand);
 stand.generateCookies();
@@ -106,6 +107,7 @@ stand.renderAsRow();
 
 // calling a footer
 renderFooter();
+
 
 
 
