@@ -20,19 +20,30 @@
   <table id = "standsTable">
 
   </table>
+  <form id="form">
+    <fieldset>
+      <legend>Enter all the data for the new store below:</legend>
 
-  <!-- <h2>SeaTac Airport</h2>
-  <ul id = "seaTac"></ul>
+      <!--make a block-level input  -->
+      <div>
+        <label for="name">Store Name:</label>
+        <input type="text" name="name" required>
+      </div>
 
-  <h2>South Center</h2>
-    <ul id = "southCenter"></ul>
+      <!--everything else in the form will be inline  -->
+      <label for="price">Number of cookies sold:</label>
+      <input type="number" name="10am" required placeholder="10am">
+      <input type="number" name="11am" required placeholder="11am">
+      <input type="number" name="12pm" required placeholder="12pm">
+      <input type="number" name="1pm" required placeholder="1pm">
+      <input type="number" name="2pm" required placeholder="2pm">
+      <input type="number" name="3pm" required placeholder="3pm">
+      <input type="number" name="4pm" required placeholder="4pm">
+      <input type="number" name="5pm" required placeholder="5pm">
 
-  <h2>Bellevue Square</h2>
-  <ul id = "bellSquare"></ul>
-
-  <h2>Alki Beach</h2>
-  <ul id = "alki"></ul> -->
-
+      <input type="submit" value="Add the store">
+    </fieldset>
+  </form>
   <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
