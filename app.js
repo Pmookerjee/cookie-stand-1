@@ -63,18 +63,20 @@ function renderHeader(){
 };
 // creating a footer function:
 function renderFooter(){
+  var table = document.getElementById('standsTable');
   trElement = document.createElement('tfoot');
+  trElement.id = 'footer';
   nameData = document.createElement('td');
   nameData.textContent = 'Total';
   trElement.appendChild(nameData);
   standsTable.appendChild(trElement);
   console.log('totals');
-  var totalByHour;
+  //var totalByHour;
   for (i = 0; i<8; i++){
     nameData = document.createElement('td');
     nameData.textContent = columnsTotal[i];
     console.log(nameData.textContent);
-    totalByHour +=columnsTotal[i];
+    //totalByHour +=columnsTotal[i];
     trElement.appendChild(nameData);
     standsTable.appendChild(trElement);
   }
@@ -107,12 +109,22 @@ console.log(stand);
 stand.generateCookies();
 stand.renderAsRow();
 
-// calling a footer
+//calling a footer
 renderFooter();
+
+
+
+function handleButtonClick(event) {
+  renderFooter();
+  console.log(event.target);
+}
+
+
 
 function handleFormSubmit(event) {
   event.preventDefault();
   console.log(event);
+  document.getElementById('standsTable').deleteTFoot();
 
   var name = event.target.name.value;
   var min = parseInt(event.target.min.value);
@@ -124,10 +136,12 @@ function handleFormSubmit(event) {
   console.log("new store added" + newStore);
   newStore.generateCookies();
   newStore.renderAsRow();
-  var rem = getElementsByTagName(tfoot);
-  //rem.remove();
-  renderFooter();
 
+  //trying to delete told footer
+
+
+
+  renderFooter();
   event.target.name.value = null;
   event.target.min.value = null;
   event.target.max.value = null;
@@ -135,3 +149,4 @@ function handleFormSubmit(event) {
 }
 
 form.addEventListener('submit', handleFormSubmit);
+button.addEventListener('click', handleButtonClick);
