@@ -19,6 +19,7 @@ h1{
 
 table{
   border: 1px, solid, black;
+  margin-bottom: 4.5%;
 }
 
 thead{
@@ -27,7 +28,7 @@ thead{
   font-weight: bold;
 }
 
-td{
+td {
   width:3%;
   padding: 1%;
   font-size: 1.5em;
@@ -46,7 +47,15 @@ th{
   width:30%;
   margin-right: 5%;
 }
-
+form fieldset input {
+  width:12%;
+  padding: 1%;
+  font-size: 1.2em;
+}
+form fieldset legend {
+  font-size: 1.4em;
+  margin-top: 5%;
+}
 #shirt {
   width:30%;
 }

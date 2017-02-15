@@ -27,19 +27,18 @@
       <!--make a block-level input  -->
       <div>
         <label for="name">Store Name:</label>
-        <input type="text" name="name" required>
+        <input type="text" name="name" required placeholder="Name">
       </div>
 
       <!--everything else in the form will be inline  -->
-      <label for="price">Number of cookies sold:</label>
-      <input type="number" name="10am" required placeholder="10am">
-      <input type="number" name="11am" required placeholder="11am">
-      <input type="number" name="12pm" required placeholder="12pm">
-      <input type="number" name="1pm" required placeholder="1pm">
-      <input type="number" name="2pm" required placeholder="2pm">
-      <input type="number" name="3pm" required placeholder="3pm">
-      <input type="number" name="4pm" required placeholder="4pm">
-      <input type="number" name="5pm" required placeholder="5pm">
+      <label for="min">Min number of customers:</label>
+      <input type="number" name="min" required placeholder="number">
+
+      <label for="max">Max number of customers:</label>
+      <input type="number" name="max" required placeholder="number">
+
+      <label for="avCook">Average number of cookies per Customer:</label>
+      <input type="number" name="avCook" required placeholder="number">
 
       <input type="submit" value="Add the store">
     </fieldset>
