@@ -8,13 +8,21 @@
 </head>
 <body>
   <header>
-    <h1>Pat's Salmon Cookies</h1>
       <!-- <img id = "salmon-image" src = "salmon.png"/> -->
-    <nav>
-      <ul>
-        <li><a href = "styleguide.html">Login (for style guide)</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul class="nav-ul1">
+          <li><a href = "index.html">Home</a></li>
+          <li><a href = "stores.html">Our Stores</a></li>
+          <li><a href = "store.html">Sales</a></li>
+        </ul>
+        <ul class = "nav-ul2">
+          <li></li>
+          <li>Employee login</li>
+          <li><a href = "styleguide.html">Style guide and support</a></li>
+        </ul>
+      </nav>
+    <h1>Pat's Salmon Cookies</h1>
+    <img id ="salmon-image" src ="salmon.png">
   </header>
   <h2>Cookie Stands Data:</h2>
   <table id = "standsTable">
@@ -27,7 +35,7 @@
       <!--make a block-level input  -->
       <div>
         <label for="name">Store Name:</label>
-        <input type="text" name="name" required placeholder="Name">
+        <input class = "storeName"type="text" name="name" required placeholder="Name">
       </div>
 
       <!--everything else in the form will be inline  -->
@@ -40,7 +48,7 @@
       <label for="avCook">Average number of cookies per Customer:</label>
       <input type="number" name="avCook" required placeholder="number">
 
-      <input type="submit" value="Add the store">
+      <input class = "mySubmit" type="submit" value="Add the store">
     </fieldset>
   </form>
   <!-- <button>Click to see totals:</button> -->

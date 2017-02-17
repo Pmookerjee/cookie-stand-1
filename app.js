@@ -61,7 +61,7 @@ function renderHeader(){
     standsTable.appendChild(trElement);
   }
 };
-// creating a footer function:
+// creating a table footer function:
 function renderFooter(){
   var table = document.getElementById('standsTable');
   trElement = document.createElement('tfoot');
@@ -88,6 +88,7 @@ var columnsTotal = [0, 0, 0, 0, 0, 0, 0, 0];
 //calling the header funcion:
 renderHeader();
 
+// creating and rendering a row for Pike Place
 var stand = new Stand('Pike Place',	17,	88,	5.2);
 console.log(stand);
 stand.generateCookies();
@@ -99,11 +100,13 @@ console.log(stand);
 stand.generateCookies();
 stand.renderAsRow();
 
+// Southcenter
 var stand = new Stand('Southcenter',	11,	38,	1.9);
 console.log(stand);
 stand.generateCookies();
 stand.renderAsRow();
 
+//Alki
 var stand = new Stand('Alki',	3,	24, 2.6);
 console.log(stand);
 stand.generateCookies();
@@ -112,20 +115,13 @@ stand.renderAsRow();
 //calling a footer
 renderFooter();
 
-
-
-function handleButtonClick(event) {
-  renderFooter();
-  console.log(event.target);
-}
-
-
-
+// handler for newly submitted store
 function handleFormSubmit(event) {
   event.preventDefault();
   console.log(event);
+  // deleting old footer:
   document.getElementById('standsTable').deleteTFoot();
-
+  // creating new row:
   var name = event.target.name.value;
   var min = parseInt(event.target.min.value);
   var max =  parseInt(event.target.max.value);
@@ -137,11 +133,9 @@ function handleFormSubmit(event) {
   newStore.generateCookies();
   newStore.renderAsRow();
 
-  //trying to delete told footer
-
-
-
   renderFooter();
+
+  //  clearing target values
   event.target.name.value = null;
   event.target.min.value = null;
   event.target.max.value = null;
@@ -149,4 +143,3 @@ function handleFormSubmit(event) {
 }
 
 form.addEventListener('submit', handleFormSubmit);
-button.addEventListener('click', handleButtonClick);
