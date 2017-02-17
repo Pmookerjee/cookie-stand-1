@@ -1,3 +1,4 @@
+/**************Styles shared by most pages****************/
 body {
   width: 100%;
   font-style: normal;
@@ -13,6 +14,11 @@ nav{
   background-color: AA6C39;
   width: 100%;
 }
+footer{
+  background-color: AA6C39;
+  height: 8%;
+}
+
 footer li {
   style:none;
   display:inline;
@@ -40,10 +46,10 @@ h1{
   display: flex;
   justify-content: center;
   font-size: 2.5em;
-
 }
 
-/*Table styles:*/
+/************Table styles:******************/
+
 thead{
   width: 15%;
   border: 1px;
@@ -60,7 +66,8 @@ th{
   padding:2%;
 }
 
-/*Images styles:*/
+/*****************Images styles:***************/
+
 #shirt {
   width:20%;
 }
@@ -70,12 +77,15 @@ th{
 }
 #salmon-image{
   width:20%;
-  margin-left: 70%;
+  margin: 0 auto;
+  display: block;
   margin-bottom: 7%;
 }
 #fishies{
-  width: 10px;
+  width: 15%;
 }
+
+/************Form to add Stores Styles:*****************/
 
 form fieldset input {
   width:8%;
@@ -103,6 +113,8 @@ display: flex;
 justify-content: space-between;
 
 }
+
+/*****************Online Store-list page styles:*************/
 #buy-cookies{
   display:inline;
   width: 30%;
@@ -114,22 +126,41 @@ justify-content: space-between;
   width: 30%;
 }
 
-/*Our Stores page styles*/
+.orders{
+  width: 40%;
+}
+/****************Our Stores page styles*****************/
+
 #Store-list{
   list-style: none;
-  list-style-image: url "fishies.jpg");
+
+
 
 }
+.st-name{
+  font-size: 1.1em;
+  font-weight:bold;
+}
 #st-list{
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
   font-weight: bold;
   margin-top: 2%;
 }
 
+ul li div {
+  display: inline-block;
+  width: 40%;
+  float: left;
+  margin: 5%;
+}
 
+ul li div p{
+  font-size: 1.1em;
+}
 
-
-
-/*StylePage styles below: */
+/****************StylePage styles below: ****************/
 #stylepage{
   background-color: white;
 }
