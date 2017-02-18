@@ -6,7 +6,7 @@ body {
   font-size: 1em;
   background-color: beige;
   background-image: salmon.jpg;
-  margin-left: 5%;
+
 }
 nav{
   display: flex;
@@ -51,14 +51,13 @@ h1{
 
 /************Table styles:******************/
 table{
-  width: 90%;
-  margin-bottom: 5%;
-  font-size: 1em;
-  border: 1px solid AA6C39;
+  width: 85%;
+  margin-bottom: 3%;
+  font-size: 0.9em;
 }
-table tr.even{
+/*table tr.even{
    background-color: grey;
-}
+}*/
 thead{
   width: 15%;
   font-weight: bold;
@@ -68,9 +67,6 @@ tfoot{
   width: 15%;
   font-weight: bold;
   padding:2%;
-  display: flex;
-  justify-content: center;
-  clear:both;
 }
 td {
   width:3%;
@@ -92,7 +88,7 @@ td {
   width:20%;
   margin: 0 auto;
   display: block;
-  margin-bottom: 7%;
+  margin-bottom: 4%;
 }
 #fishies{
   width: 15%;
@@ -107,6 +103,7 @@ form fieldset input {
   border-radius: 5%;
 }
 form fieldset legend {
+  font-weight: bold;
   font-size: 1.4em;
   margin-top: 5%;
 }
