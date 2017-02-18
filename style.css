@@ -5,26 +5,21 @@ body {
   font-family: sans-serif;
   font-size: 1em;
   background-color: beige;
-  background-image: salmon.jpg;
-
 }
+
+h1{
+  display: flex;
+  justify-content: center;
+  font-size: 2.5em;
+}
+
+
+/*************top nav bar*******************/
 nav{
   display: flex;
   justify-content: space-between;
   background-color: AA6C39;
   width: 100%;
-}
-footer{
-  clear:both;
-  background-color: AA6C39;
-  height: 8%;
-}
-
-footer li {
-  style:none;
-  display:inline;
-  justify-content: space-between;
-  margin-left: 10%;
 }
 nav ul li {
   list-style: none;
@@ -43,11 +38,29 @@ nav ul li {
   justify-content: flex-end;
 }
 
-h1{
-  display: flex;
-  justify-content: center;
-  font-size: 2.5em;
+/*********Footer********/
+footer ul li {
+  list-style: none;
+  margin-left: 10%;
 }
+
+footer{
+  clear:both;
+  background-color: AA6C39;
+  height: 8%;
+}
+
+footer  li img {
+  margin-top: 1%;
+}
+
+footer li {
+  style:none;
+  display:inline;
+  justify-content: space-between;
+  margin-left: 10%;
+}
+
 
 /************Table styles:******************/
 table{
@@ -96,6 +109,10 @@ td {
 
 /************Form to add Stores Styles:*****************/
 
+#form2 {
+  display: flex;
+  justify-content: space-around;
+}
 form fieldset input {
   width:8%;
   padding: 1%;
@@ -118,13 +135,9 @@ form fieldset legend {
   margin-left: 5%;
   background-color: AA6C39;
 }
-form2{
-display: flex;
-justify-content: space-between;
-
-}
 
 /*****************Online Store-list page styles:*************/
+
 #buy-cookies{
   display:inline;
   width: 30%;
@@ -205,3 +218,11 @@ ul li div p{
 #color2{
   background-color: AA6C39;
 }
+/***********social media icons**************/
+
+.tw{
+  width: 3%;
+}
+
+
+/************Stores Page containerstyle*************/
